@@ -182,13 +182,7 @@ img {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(212, 175, 55, 0.02) 2px,
-    rgba(212, 175, 55, 0.02) 4px
-  );
+  background: rgba(0, 0, 0, 0.65);
   pointer-events: none;
 }
 
@@ -741,17 +735,6 @@ img {
   box-shadow: 0 8px 30px rgba(0, 214, 50, 0.3);
 }
 
-.paypal-btn {
-  background: #0070BA;
-  color: #FFFFFF;
-}
-
-.paypal-btn:hover {
-  background: #005FA3;
-  color: #FFFFFF;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(0, 112, 186, 0.3);
-}
 
 /* ===== CONTACT ===== */
 .contact-content {
