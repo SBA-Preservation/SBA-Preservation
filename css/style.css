@@ -200,10 +200,10 @@ img {
 }
 
 .hero-logo {
-  width: 320px;
+  width: 200px;
   height: auto;
   margin: 0 auto 32px;
-  border-radius: 12px;
+  border-radius: 50%;
   border: 3px solid var(--gold);
   box-shadow: 0 0 60px rgba(212, 175, 55, 0.2);
   animation: logoGlow 4s ease-in-out infinite alternate;
