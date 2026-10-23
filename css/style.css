@@ -641,9 +641,19 @@ img {
   background: rgba(212, 175, 55, 0.06);
   border: 1px solid rgba(212, 175, 55, 0.2);
   border-radius: 16px;
-  padding: 40px;
+  padding: 0;
   max-width: 700px;
   margin: 0 auto;
+  overflow: hidden;
+}
+
+.event-card-img {
+  width: 100%;
+  display: block;
+}
+
+.event-card .event-details {
+  padding: 40px;
 }
 
 .event-details h4 {
