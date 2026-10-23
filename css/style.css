@@ -477,7 +477,7 @@ img {
 /* ===== SCHOLARSHIP ===== */
 .scholarship-content {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 60px;
   align-items: start;
 }
@@ -507,11 +507,9 @@ img {
 }
 
 .scholarship-recipients {
-  background: rgba(212, 175, 55, 0.06);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  border-radius: 16px;
-  padding: 40px;
-  text-align: center;
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 .scholarship-recipients h3 {
@@ -520,14 +518,14 @@ img {
   color: var(--gold);
   margin-bottom: 20px;
   font-weight: 600;
+  text-align: center;
 }
 
 .scholarship-recipients p {
   color: var(--white-muted);
   font-size: 1.05rem;
   line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto 32px;
+  margin-bottom: 32px;
 }
 
 .recipients-photos {
