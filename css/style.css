@@ -556,6 +556,50 @@ img {
   font-weight: 600;
 }
 
+.scholarship-download {
+  background: rgba(212, 175, 55, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 16px;
+  padding: 36px;
+  text-align: center;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+.scholarship-download h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--gold);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.scholarship-download p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 24px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.scholarship-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold);
+  color: #000;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.scholarship-download-btn:hover {
+  background: #e5c04b;
+  transform: translateY(-2px);
+}
+
 .scholarship-committee {
   background: rgba(212, 175, 55, 0.06);
   border: 1px solid rgba(212, 175, 55, 0.2);
