@@ -54,23 +54,59 @@ document.addEventListener('DOMContentLoaded', function () {
   // --- Gallery filter ---
   var filterBtns = document.querySelectorAll('.filter-btn');
   var galleryItems = document.querySelectorAll('.gallery-item');
+  var filtersContainer = document.getElementById('galleryFilters');
+
+  function applyFilter(filter) {
+    galleryItems.forEach(function (item) {
+      if (item.getAttribute('data-category') === filter) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  }
 
   filterBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
       filterBtns.forEach(function (b) { b.classList.remove('active'); });
       btn.classList.add('active');
-
-      var filter = btn.getAttribute('data-filter');
-
-      galleryItems.forEach(function (item) {
-        if (filter === 'all' || item.getAttribute('data-category') === filter) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
-      });
+      applyFilter(btn.getAttribute('data-filter'));
     });
   });
+
+  // Show first category by default
+  if (filterBtns.length > 0) {
+    applyFilter(filterBtns[0].getAttribute('data-filter'));
+  }
+
+  // --- Filter scroll buttons ---
+  var scrollLeftBtn = document.querySelector('.filter-scroll-left');
+  var scrollRightBtn = document.querySelector('.filter-scroll-right');
+
+  function updateScrollButtons() {
+    if (!filtersContainer) return;
+    var scrollable = filtersContainer.scrollWidth > filtersContainer.clientWidth + 1;
+    if (scrollable) {
+      scrollLeftBtn.classList.toggle('hidden', filtersContainer.scrollLeft < 5);
+      scrollRightBtn.classList.toggle('hidden',
+        filtersContainer.scrollLeft + filtersContainer.clientWidth >= filtersContainer.scrollWidth - 5);
+    } else {
+      scrollLeftBtn.classList.add('hidden');
+      scrollRightBtn.classList.add('hidden');
+    }
+  }
+
+  if (scrollLeftBtn && scrollRightBtn && filtersContainer) {
+    scrollLeftBtn.addEventListener('click', function () {
+      filtersContainer.scrollBy({ left: -200, behavior: 'smooth' });
+    });
+    scrollRightBtn.addEventListener('click', function () {
+      filtersContainer.scrollBy({ left: 200, behavior: 'smooth' });
+    });
+    filtersContainer.addEventListener('scroll', updateScrollButtons);
+    window.addEventListener('resize', updateScrollButtons);
+    updateScrollButtons();
+  }
 
   // --- Lightbox ---
   var lightbox = document.getElementById('lightbox');

@@ -814,13 +814,46 @@ img {
 }
 
 /* ===== PHOTO GALLERY ===== */
+.gallery-filters-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
 .gallery-filters {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 40px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  flex: 1;
+  padding: 4px 0;
+  justify-content: center;
 }
+
+.gallery-filters::-webkit-scrollbar { display: none; }
+
+.filter-scroll-btn {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--gold);
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.filter-scroll-btn:hover { background: rgba(212, 175, 55, 0.25); }
+.filter-scroll-btn.hidden { visibility: hidden; }
 
 .filter-btn {
   padding: 10px 24px;
@@ -1183,11 +1216,14 @@ img {
 
   .gallery-filters {
     gap: 8px;
+    justify-content: flex-start;
   }
 
   .filter-btn {
     padding: 8px 16px;
     font-size: 0.8rem;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   .donate-buttons {
