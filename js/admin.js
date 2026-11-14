@@ -104,7 +104,7 @@
           showPage(setupPage);
         }
       }).catch(function () {
-        showPage(setupPage);
+        showPage(loginPage);
       });
     }
   });
